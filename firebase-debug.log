@@ -1,0 +1,427 @@
+[debug] [2023-09-29T14:49:45.166Z] ----------------------------------------------------------------------
+[debug] [2023-09-29T14:49:45.169Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KELLY\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-09-29T14:49:45.170Z] CLI Version:   12.6.1
+[debug] [2023-09-29T14:49:45.171Z] Platform:      win32
+[debug] [2023-09-29T14:49:45.171Z] Node Version:  v18.18.0
+[debug] [2023-09-29T14:49:45.173Z] Time:          Fri Sep 29 2023 17:49:45 GMT+0300 (East Africa Time)
+[debug] [2023-09-29T14:49:45.173Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-29T14:49:45.191Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-29T14:49:45.192Z] > authorizing via signed-in user (kellymomanyi80@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\KELLY\Desktop\Docs\bscit 2\magaki
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-09-29T14:56:59.069Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2023-09-29T14:57:01.975Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2023-09-29T14:57:01.975Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project kelly-s-1fe05 (Kelly's ) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2023-09-29T14:57:43.310Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/firebasedatabase.googleapis.com [none]
+[debug] [2023-09-29T14:57:43.310Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/kelly-s-1fe05
+[debug] [2023-09-29T14:57:45.252Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/firebasedatabase.googleapis.com 200
+[debug] [2023-09-29T14:57:45.252Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2023-09-29T14:57:45.256Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/kelly-s-1fe05/locations/-/instances/kelly-s-1fe05-default-rtdb [none]
+[debug] [2023-09-29T14:57:47.361Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/kelly-s-1fe05/locations/-/instances/kelly-s-1fe05-default-rtdb 200
+[debug] [2023-09-29T14:57:47.361Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/kelly-s-1fe05/locations/-/instances/kelly-s-1fe05-default-rtdb {"name":"projects/992365918258/locations/us-central1/instances/kelly-s-1fe05-default-rtdb","project":"projects/992365918258","databaseUrl":"https://kelly-s-1fe05-default-rtdb.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2023-09-29T14:58:35.942Z] >>> [apiv2][query] GET https://kelly-s-1fe05-default-rtdb.firebaseio.com/.settings/rules.json [none]
+[debug] [2023-09-29T14:58:36.745Z] <<< [apiv2][status] GET https://kelly-s-1fe05-default-rtdb.firebaseio.com/.settings/rules.json 200
+[debug] [2023-09-29T14:58:36.745Z] <<< [apiv2][body] GET https://kelly-s-1fe05-default-rtdb.firebaseio.com/.settings/rules.json [stream]
+[info] +  Database Rules for kelly-s-1fe05-default-rtdb have been written to database.rules.json. 
+[info] Future modifications to database.rules.json will update Realtime Database Security Rules when you run
+[info] firebase deploy.
+[info] 
+=== Firestore Setup
+[debug] [2023-09-29T14:58:36.751Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/firestore.googleapis.com [none]
+[debug] [2023-09-29T14:58:36.751Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/firestore.googleapis.com x-goog-quota-user=projects/kelly-s-1fe05
+[debug] [2023-09-29T14:58:38.486Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/firestore.googleapis.com 200
+[debug] [2023-09-29T14:58:38.486Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/firestore.googleapis.com [omitted]
+[debug] [2023-09-29T14:58:38.487Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/kelly-s-1fe05/databases/(default) [none]
+[debug] [2023-09-29T14:58:40.283Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/kelly-s-1fe05/databases/(default) 200
+[debug] [2023-09-29T14:58:40.284Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/kelly-s-1fe05/databases/(default) {"name":"projects/kelly-s-1fe05/databases/(default)","uid":"82a40427-5f7c-4679-850e-f0a84f8c54de","createTime":"2023-09-23T14:50:07.010169Z","updateTime":"2023-09-23T14:50:07.010169Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2023-09-29T13:58:42.620957Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IM+E18iK0IEDMOrEiKqEwYED"}
+[debug] [2023-09-29T14:58:40.284Z] database_type: FIRESTORE_NATIVE
+[debug] [2023-09-29T14:58:40.285Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-29T14:58:40.286Z] > authorizing via signed-in user (kellymomanyi80@gmail.com)
+[debug] [2023-09-29T14:58:40.286Z] [iam] checking project kelly-s-1fe05 for permissions ["firebase.projects.get"]
+[debug] [2023-09-29T14:58:40.288Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:testIamPermissions [none]
+[debug] [2023-09-29T14:58:40.288Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:testIamPermissions x-goog-quota-user=projects/kelly-s-1fe05
+[debug] [2023-09-29T14:58:40.288Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-09-29T14:58:42.033Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:testIamPermissions 200
+[debug] [2023-09-29T14:58:42.033Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2023-09-29T14:58:50.766Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/kelly-s-1fe05/releases pageSize=10&pageToken=
+[debug] [2023-09-29T14:58:52.020Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/kelly-s-1fe05/releases 200
+[debug] [2023-09-29T14:58:52.021Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/kelly-s-1fe05/releases {"releases":[{"name":"projects/kelly-s-1fe05/releases/cloud.firestore","rulesetName":"projects/kelly-s-1fe05/rulesets/4be0d0ca-c265-443a-961c-ead42a4bcb98","createTime":"2023-09-23T14:50:12.603283Z","updateTime":"2023-09-26T15:36:17.827699Z"},{"name":"projects/kelly-s-1fe05/releases/firebase.storage/kelly-s-1fe05.appspot.com","rulesetName":"projects/kelly-s-1fe05/rulesets/f7d1c93e-0414-47d6-8035-c0152e2f94d7","createTime":"2023-09-23T15:19:22.774293Z","updateTime":"2023-09-23T15:19:22.774293Z"}]}
+[debug] [2023-09-29T14:58:52.022Z] Found ruleset: projects/kelly-s-1fe05/rulesets/4be0d0ca-c265-443a-961c-ead42a4bcb98
+[debug] [2023-09-29T14:58:52.023Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/kelly-s-1fe05/rulesets/4be0d0ca-c265-443a-961c-ead42a4bcb98 [none]
+[debug] [2023-09-29T14:58:52.948Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/kelly-s-1fe05/rulesets/4be0d0ca-c265-443a-961c-ead42a4bcb98 200
+[debug] [2023-09-29T14:58:52.948Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/kelly-s-1fe05/rulesets/4be0d0ca-c265-443a-961c-ead42a4bcb98 [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2023-09-29T14:59:02.798Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/kelly-s-1fe05/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2023-09-29T14:59:02.802Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/kelly-s-1fe05/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2023-09-29T14:59:04.712Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/kelly-s-1fe05/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2023-09-29T14:59:04.713Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/kelly-s-1fe05/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/kelly-s-1fe05/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[debug] [2023-09-29T14:59:04.760Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/kelly-s-1fe05/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2023-09-29T14:59:04.760Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/kelly-s-1fe05/databases/(default)/collectionGroups/-/indexes {}
+[info] 
+=== Functions Setup
+[debug] [2023-09-29T14:59:04.764Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-29T14:59:04.764Z] > authorizing via signed-in user (kellymomanyi80@gmail.com)
+[debug] [2023-09-29T14:59:04.765Z] [iam] checking project kelly-s-1fe05 for permissions ["firebase.projects.get"]
+[debug] [2023-09-29T14:59:04.765Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:testIamPermissions [none]
+[debug] [2023-09-29T14:59:04.765Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:testIamPermissions x-goog-quota-user=projects/kelly-s-1fe05
+[debug] [2023-09-29T14:59:04.765Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-09-29T14:59:06.268Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:testIamPermissions 200
+[debug] [2023-09-29T14:59:06.269Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-09-29T14:59:06.270Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-09-29T14:59:06.271Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/kelly-s-1fe05
+[debug] [2023-09-29T14:59:06.283Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-09-29T14:59:06.283Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/kelly-s-1fe05
+[debug] [2023-09-29T14:59:07.934Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/cloudfunctions.googleapis.com 200
+[debug] [2023-09-29T14:59:07.935Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2023-09-29T14:59:07.936Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2023-09-29T14:59:07.936Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/cloudfunctions.googleapis.com:enable x-goog-quota-user=projects/kelly-s-1fe05
+[debug] [2023-09-29T14:59:07.950Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/runtimeconfig.googleapis.com 200
+[debug] [2023-09-29T14:59:07.950Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-09-29T14:59:10.357Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2023-09-29T14:59:10.357Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/cloudfunctions.googleapis.com:enable [omitted]
+[debug] [2023-09-29T14:59:20.367Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-09-29T14:59:20.367Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/kelly-s-1fe05
+[debug] [2023-09-29T14:59:22.025Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/cloudfunctions.googleapis.com 200
+[debug] [2023-09-29T14:59:22.025Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/kelly-s-1fe05/services/cloudfunctions.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] +  Wrote functions/package.json 
+[info] +  Wrote functions/.eslintrc.js 
+[info] +  Wrote functions/index.js 
+[info] +  Wrote functions/.gitignore 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[info] +  Wrote public/404.html 
+[debug] [2023-09-29T15:05:32.029Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2023-09-29T15:05:32.698Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2023-09-29T15:05:32.698Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"10.4.0","browserURL":"https://www.gstatic.com/firebasejs/10.4.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/10.4.0/firebase.tgz"},"live":{"version":"10.4","browserURL":"https://www.gstatic.com/firebasejs/live/10.4/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/10.4/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/10.4.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/10.4.0/firebase-auth/cordova.js","functions":"https://www.gstatic.com/firebasejs/10.4.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/10.4.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/10.4.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/10.4.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/10.4.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/10.4.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/10.4.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js","firestore.memory":"https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.memory.js"}}
+[info] +  Wrote public/index.html 
+[info] 
+[info] i  Didn't detect a .git folder. Assuming C:\Users\KELLY\Desktop\Docs\bscit 2\magaki is the project root. 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=478416132&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2023-09-29T15:06:04.827Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2023-09-29T15:06:04.828Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2023-09-29T15:06:05.508Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2023-09-29T15:06:05.508Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2023-09-29T15:06:05.521Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2023-09-29T15:06:06.129Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2023-09-29T15:06:06.129Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"kellyKevin","id":120336782,"node_id":"U_kgDOBywxjg","avatar_url":"https://avatars.githubusercontent.com/u/120336782?v=4","gravatar_id":"","url":"https://api.github.com/users/kellyKevin","html_url":"https://github.com/kellyKevin","followers_url":"https://api.github.com/users/kellyKevin/followers","following_url":"https://api.github.com/users/kellyKevin/following{/other_user}","gists_url":"https://api.github.com/users/kellyKevin/gists{/gist_id}","starred_url":"https://api.github.com/users/kellyKevin/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/kellyKevin/subscriptions","organizations_url":"https://api.github.com/users/kellyKevin/orgs","repos_url":"https://api.github.com/users/kellyKevin/repos","events_url":"https://api.github.com/users/kellyKevin/events{/privacy}","received_events_url":"https://api.github.com/users/kellyKevin/received_events","type":"User","site_admin":false,"name":"KellyKevin ","company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":"I'm currently studying at zetech and part of the ALX program\r\n","twitter_username":null,"public_repos":9,"public_gists":0,"followers":1,"following":7,"created_at":"2022-12-11T19:51:39Z","updated_at":"2023-09-27T16:55:56Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":222,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as kellyKevin 
+[info] 
+[debug] [2023-09-29T15:07:57.392Z] >>> [apiv2][query] GET https://api.github.com/repos/kellyKevin/Kelly/actions/secrets/public-key type=owner
+[debug] [2023-09-29T15:07:59.350Z] <<< [apiv2][status] GET https://api.github.com/repos/kellyKevin/Kelly/actions/secrets/public-key 200
+[debug] [2023-09-29T15:07:59.351Z] <<< [apiv2][body] GET https://api.github.com/repos/kellyKevin/Kelly/actions/secrets/public-key {"key_id":"568250167242549743","key":"TG8E6faIg719R2W2obm/LfTn7f4/z/ay2gJgdpyYcm0="}
+[debug] [2023-09-29T15:07:59.353Z] >>> [apiv2][query] GET https://api.github.com/repos/kellyKevin/Kelly [none]
+[debug] [2023-09-29T15:08:01.033Z] <<< [apiv2][status] GET https://api.github.com/repos/kellyKevin/Kelly 200
+[debug] [2023-09-29T15:08:01.034Z] <<< [apiv2][body] GET https://api.github.com/repos/kellyKevin/Kelly {"id":698025415,"node_id":"R_kgDOKZsFxw","name":"Kelly","full_name":"kellyKevin/Kelly","private":false,"owner":{"login":"kellyKevin","id":120336782,"node_id":"U_kgDOBywxjg","avatar_url":"https://avatars.githubusercontent.com/u/120336782?v=4","gravatar_id":"","url":"https://api.github.com/users/kellyKevin","html_url":"https://github.com/kellyKevin","followers_url":"https://api.github.com/users/kellyKevin/followers","following_url":"https://api.github.com/users/kellyKevin/following{/other_user}","gists_url":"https://api.github.com/users/kellyKevin/gists{/gist_id}","starred_url":"https://api.github.com/users/kellyKevin/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/kellyKevin/subscriptions","organizations_url":"https://api.github.com/users/kellyKevin/orgs","repos_url":"https://api.github.com/users/kellyKevin/repos","events_url":"https://api.github.com/users/kellyKevin/events{/privacy}","received_events_url":"https://api.github.com/users/kellyKevin/received_events","type":"User","site_admin":false},"html_url":"https://github.com/kellyKevin/Kelly","description":null,"fork":false,"url":"https://api.github.com/repos/kellyKevin/Kelly","forks_url":"https://api.github.com/repos/kellyKevin/Kelly/forks","keys_url":"https://api.github.com/repos/kellyKevin/Kelly/keys{/key_id}","collaborators_url":"https://api.github.com/repos/kellyKevin/Kelly/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/kellyKevin/Kelly/teams","hooks_url":"https://api.github.com/repos/kellyKevin/Kelly/hooks","issue_events_url":"https://api.github.com/repos/kellyKevin/Kelly/issues/events{/number}","events_url":"https://api.github.com/repos/kellyKevin/Kelly/events","assignees_url":"https://api.github.com/repos/kellyKevin/Kelly/assignees{/user}","branches_url":"https://api.github.com/repos/kellyKevin/Kelly/branches{/branch}","tags_url":"https://api.github.com/repos/kellyKevin/Kelly/tags","blobs_url":"https://api.github.com/repos/kellyKevin/Kelly/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/kellyKevin/Kelly/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/kellyKevin/Kelly/git/refs{/sha}","trees_url":"https://api.github.com/repos/kellyKevin/Kelly/git/trees{/sha}","statuses_url":"https://api.github.com/repos/kellyKevin/Kelly/statuses/{sha}","languages_url":"https://api.github.com/repos/kellyKevin/Kelly/languages","stargazers_url":"https://api.github.com/repos/kellyKevin/Kelly/stargazers","contributors_url":"https://api.github.com/repos/kellyKevin/Kelly/contributors","subscribers_url":"https://api.github.com/repos/kellyKevin/Kelly/subscribers","subscription_url":"https://api.github.com/repos/kellyKevin/Kelly/subscription","commits_url":"https://api.github.com/repos/kellyKevin/Kelly/commits{/sha}","git_commits_url":"https://api.github.com/repos/kellyKevin/Kelly/git/commits{/sha}","comments_url":"https://api.github.com/repos/kellyKevin/Kelly/comments{/number}","issue_comment_url":"https://api.github.com/repos/kellyKevin/Kelly/issues/comments{/number}","contents_url":"https://api.github.com/repos/kellyKevin/Kelly/contents/{+path}","compare_url":"https://api.github.com/repos/kellyKevin/Kelly/compare/{base}...{head}","merges_url":"https://api.github.com/repos/kellyKevin/Kelly/merges","archive_url":"https://api.github.com/repos/kellyKevin/Kelly/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/kellyKevin/Kelly/downloads","issues_url":"https://api.github.com/repos/kellyKevin/Kelly/issues{/number}","pulls_url":"https://api.github.com/repos/kellyKevin/Kelly/pulls{/number}","milestones_url":"https://api.github.com/repos/kellyKevin/Kelly/milestones{/number}","notifications_url":"https://api.github.com/repos/kellyKevin/Kelly/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/kellyKevin/Kelly/labels{/name}","releases_url":"https://api.github.com/repos/kellyKevin/Kelly/releases{/id}","deployments_url":"https://api.github.com/repos/kellyKevin/Kelly/deployments","created_at":"2023-09-29T01:29:59Z","updated_at":"2023-09-29T01:29:59Z","pushed_at":"2023-09-29T01:29:59Z","git_url":"git://github.com/kellyKevin/Kelly.git","ssh_url":"git@github.com:kellyKevin/Kelly.git","clone_url":"https://github.com/kellyKevin/Kelly.git","svn_url":"https://github.com/kellyKevin/Kelly","homepage":null,"size":0,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"has_discussions":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"public","forks":0,"open_issues":0,"watchers":0,"default_branch":"main","permissions":{"admin":true,"maintain":true,"push":true,"triage":true,"pull":true},"temp_clone_token":"","allow_squash_merge":true,"allow_merge_commit":true,"allow_rebase_merge":true,"allow_auto_merge":false,"delete_branch_on_merge":false,"allow_update_branch":false,"use_squash_pr_title_as_default":false,"squash_merge_commit_message":"COMMIT_MESSAGES","squash_merge_commit_title":"COMMIT_OR_PR_TITLE","merge_commit_message":"PR_TITLE","merge_commit_title":"MERGE_MESSAGE","security_and_analysis":{"secret_scanning":{"status":"disabled"},"secret_scanning_push_protection":{"status":"disabled"},"dependabot_security_updates":{"status":"disabled"}},"network_count":0,"subscribers_count":1}
+[debug] [2023-09-29T15:08:01.038Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/kelly-s-1fe05/serviceAccounts [none]
+[debug] [2023-09-29T15:08:01.038Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/kelly-s-1fe05/serviceAccounts {"accountId":"github-action-698025415","serviceAccount":{"displayName":"GitHub Actions (kellyKevin/Kelly)","description":"A service account with permission to deploy to Firebase Hosting and Cloud Functions for the GitHub repository kellyKevin/Kelly"}}
+[debug] [2023-09-29T15:08:05.015Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/kelly-s-1fe05/serviceAccounts 200
+[debug] [2023-09-29T15:08:05.015Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/kelly-s-1fe05/serviceAccounts [omitted]
+[debug] [2023-09-29T15:08:05.017Z] >>> [apiv2][query] GET https://iam.googleapis.com/v1/projects/kelly-s-1fe05/serviceAccounts/github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com [none]
+[debug] [2023-09-29T15:08:05.020Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:getIamPolicy [none]
+[debug] [2023-09-29T15:08:08.616Z] <<< [apiv2][status] GET https://iam.googleapis.com/v1/projects/kelly-s-1fe05/serviceAccounts/github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com 200
+[debug] [2023-09-29T15:08:08.618Z] <<< [apiv2][body] GET https://iam.googleapis.com/v1/projects/kelly-s-1fe05/serviceAccounts/github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com {"name":"projects/kelly-s-1fe05/serviceAccounts/github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com","projectId":"kelly-s-1fe05","uniqueId":"100799123058705649328","email":"github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com","displayName":"GitHub Actions (kellyKevin/Kelly)","etag":"MDEwMjE5MjA=","description":"A service account with permission to deploy to Firebase Hosting and Cloud Functions for the GitHub repository kellyKevin/Kelly","oauth2ClientId":"100799123058705649328"}
+[debug] [2023-09-29T15:08:08.811Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:getIamPolicy 200
+[debug] [2023-09-29T15:08:08.811Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:getIamPolicy {"version":1,"etag":"BwYGgKru5+Q=","bindings":[{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-992365918258@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:kelly-s-1fe05@appspot.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-992365918258@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/firebasedatabase.admin","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-992365918258@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firebasestorage.serviceAgent","members":["serviceAccount:service-992365918258@gcp-sa-firebasestorage.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-992365918258@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:kellymomanyi80@gmail.com"]},{"role":"roles/pubsub.serviceAgent","members":["serviceAccount:service-992365918258@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/storage.admin","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com"]}]}
+[debug] [2023-09-29T15:08:08.812Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:setIamPolicy [none]
+[debug] [2023-09-29T15:08:08.813Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:setIamPolicy {"policy":{"version":1,"etag":"BwYGgKru5+Q=","bindings":[{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-992365918258@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:kelly-s-1fe05@appspot.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-992365918258@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com","serviceAccount:github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/firebasedatabase.admin","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-992365918258@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firebasestorage.serviceAgent","members":["serviceAccount:service-992365918258@gcp-sa-firebasestorage.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-992365918258@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:kellymomanyi80@gmail.com"]},{"role":"roles/pubsub.serviceAgent","members":["serviceAccount:service-992365918258@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/storage.admin","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.apiKeysViewer","members":["serviceAccount:github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/firebasehosting.admin","members":["serviceAccount:github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/run.viewer","members":["serviceAccount:github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.developer","members":["serviceAccount:github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com"]}]},"updateMask":"bindings"}
+[debug] [2023-09-29T15:08:12.069Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:setIamPolicy 200
+[debug] [2023-09-29T15:08:12.069Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelly-s-1fe05:setIamPolicy {"version":1,"etag":"BwYGgMsjXLI=","bindings":[{"role":"roles/cloudfunctions.developer","members":["serviceAccount:github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-992365918258@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:kelly-s-1fe05@appspot.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-992365918258@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com","serviceAccount:github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/firebasedatabase.admin","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/firebasehosting.admin","members":["serviceAccount:github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-992365918258@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firebasestorage.serviceAgent","members":["serviceAccount:service-992365918258@gcp-sa-firebasestorage.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-992365918258@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:kellymomanyi80@gmail.com"]},{"role":"roles/pubsub.serviceAgent","members":["serviceAccount:service-992365918258@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/run.viewer","members":["serviceAccount:github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.apiKeysViewer","members":["serviceAccount:github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com"]},{"role":"roles/storage.admin","members":["serviceAccount:firebase-adminsdk-tjyne@kelly-s-1fe05.iam.gserviceaccount.com"]}]}
+[debug] [2023-09-29T15:08:12.070Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/kelly-s-1fe05/serviceAccounts/github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com/keys [none]
+[debug] [2023-09-29T15:08:12.070Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/kelly-s-1fe05/serviceAccounts/github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com/keys {"keyAlgorithm":"KEY_ALG_UNSPECIFIED","privateKeyType":"TYPE_GOOGLE_CREDENTIALS_FILE"}
+[debug] [2023-09-29T15:08:14.670Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/kelly-s-1fe05/serviceAccounts/github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com/keys 200
+[debug] [2023-09-29T15:08:14.670Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/kelly-s-1fe05/serviceAccounts/github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com/keys {"name":"projects/kelly-s-1fe05/serviceAccounts/github-action-698025415@kelly-s-1fe05.iam.gserviceaccount.com/keys/fe6c736409a7c3b0f3b9ab5ab488fec49d5904ce","privateKeyType":"TYPE_GOOGLE_CREDENTIALS_FILE","privateKeyData":"ewogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2plY3RfaWQiOiAia2VsbHktcy0xZmUwNSIsCiAgInByaXZhdGVfa2V5X2lkIjogImZlNmM3MzY0MDlhN2MzYjBmM2I5YWI1YWI0ODhmZWM0OWQ1OTA0Y2UiLAogICJwcml2YXRlX2tleSI6ICItLS0tLUJFR0lOIFBSSVZBVEUgS0VZLS0tLS1cbk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQ2h1MDUrY3hxRzhvQTRcbjQva2lFZU9QeG5GUnNWK3VGTk42dXI1VFdvL3pFYWdXekF3YWtVYWw0Y3I4TXV2Z3dIS3NGYlh1cDBYQVhBeVdcbjVYMmk3Q2xtOTFVU3Ntb3J6Nk05dEtiVEVZWmM1Z3ZVbDNNMjZ0L1ZFUWgwZEtmNUpPV2xGdnlsdkRaNmJUYThcbll3V2I0ZUxlSVQ4bWEwVTV5UVJZY3QvZlhSRmVIU2p4ZDJBSWNrWjdQNlRLMGNTdXRnQU56dnNlN3pKVzQ1VkVcbjFNQkhyVGtZdVIrckhTWG5lQUh1dUtzaGdIbFJTLzR4Zk5HSDZpbjdEaUNmL1Bsd1k1RGdXTzlmRHNvb1BUWnVcbmhkcDVYcGxrdUlBSVFTQVBtSDlneXU5YmdwQWFvTVF5VU5XVTMzazNabXhtYWozTlFGODJlWVAzeGpvdTAweU1cbnRmV2RKMnJuQWdNQkFBRUNnZ0VBT0xhcmxGajlyT085eGZWZmlDeDR2WktyYXlmRmN4Q1hoanFWQWpySUxzYjZcbnlCKytnTlIvenl5cUZ4MHVMTzZmWjZ2blUreHhYNzZIcGFTTkZZUTJFb2JaM01nV3hnMDJZNjJGTUkrOUs3ZDVcbjM0OUtWakF2MUpINEFvcGoydEN1L09EZU1Lb2Erbnh3ek1mMmtBNjZsUVZZbFRyWm1DVmU4anM2T1NQME1xbDlcblRIREkxU3hvYWZEMTJFYXkwaWY3bWRoeEU5c3V1T2VIc0lXVms4MENrUisvc0liVE9yOVQvSk1QSFhtenpWclNcbjNjODlvUkxldTdURTNNV1VxTDFRbkZjZHhnd0thVmFrT3ZpQzZkZEllSG5rb0NMZzN2SmVPVTVjVk9PSVdCdGxcblZlSFN3VVFKb2g2K0ozZ3hBWXJ3QS9nUU1NYm1hT3VibEdKVkEwZFlSUUtCZ1FEUm1jZHRPekdMdDNDYm9CNDJcbmVUYXFuL0NwcXY3WUdUZjlCUW9NbGFGWUIzMy9sdTBSWnRSSjUweGV2RllPbjMxcVZmWG04TmkreFd1MFY5djZcbkF2ZHAwbithMUZQTzBBSi9vL0ZGdlRYOGpmejhtaTljMjBSc1V2bUg0TU5hVmpsd0Rib0xWRzVONFU4TEd1bTJcbjloa2FPZkNFZGdCLzJWTzJtK21YVEpwbEF3S0JnUURGaU1GaVZkNkk2WVhHUG9kdWFGblY3SXVQRkFsMFNoYUJcbkIwNXp0N2lRUkNhMEM4SzlEclNGSU8wWjQ0Y0cwQUtRQ25Ib2ZLRHlTODFGRjhqWTBKR21RTXhLVWRmMHNoNDhcblF5YUgxOEVhRjhRS0d0dXArY0tvcTdxbWhTV2xNdFkvOWZnSkVrUVp0Tm1YcEVTZWpFd2JWOGJzL3JvL0k4eStcbkl5Q0lnOWdEVFFLQmdRREJ2bmNFTmhvblB1cGRRRldOSHVCME9hRjVCREhMU1F4aTJseWVvMVZmakpWZ1EzOWhcbmZYNnZ6WmpmWFJIak5IUDJiZnorZXhTdXlzZ3pESit1NnowTjJXRFFtb0haZ3BjOHF5c2p2ckYvZ1RRZnZ0b1dcbjZDdklRYTZjZGh1OWprUkxtclNsTW1jL29BdXpoUzRTVEV1SjNaTEFybDdwenRhOXprTE84eVVvUndLQmdDYldcbjZ0OUE3dzZRakFNY3pGaERJRmJWdWVNYUYzbk1EM3l6U1JPcnJoaC9yZlI4MDMrRTRxM0NlWnc3aHBNcVZ6YW5cbk54cDFWdGdOVzRFWVdoOTNjd3Z6ZGJldk8vMGJBS0xzdVNqQW5YRlo5dXZkdUE5RjBxYURqYUdzVUdpWkJGTnpcbk01L2svWXJvYWxoTXJrbFdZS2lIcTg5eGpvRlhzcXc0RCsrSHJQT0pBb0dBZHd0bXRGYis4UGpTZjVGWkZBUFhcbnlkWGtBRitIaFlhaVVlWENnRlJRN3c0V2pBUE1xcWx0ZEdsL1g5L1BMcllTNkZncGhNMkxBQ0ROcHQrWEtQWHhcbjlZTGFxazBPWG8wUkF1VzF5OHIwc3V2WHpEOTBzSHMrSitQZ1RJR0Rlc2RhWW16YnFqU2orRGIzU1VaRE5QUzNcblBJUWV2cUd0RjdOSDlDcklaY2o2cHU0PVxuLS0tLS1FTkQgUFJJVkFURSBLRVktLS0tLVxuIiwKICAiY2xpZW50X2VtYWlsIjogImdpdGh1Yi1hY3Rpb24tNjk4MDI1NDE1QGtlbGx5LXMtMWZlMDUuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLAogICJjbGllbnRfaWQiOiAiMTAwNzk5MTIzMDU4NzA1NjQ5MzI4IiwKICAiYXV0aF91cmkiOiAiaHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tL28vb2F1dGgyL2F1dGgiLAogICJ0b2tlbl91cmkiOiAiaHR0cHM6Ly9vYXV0aDIuZ29vZ2xlYXBpcy5jb20vdG9rZW4iLAogICJhdXRoX3Byb3ZpZGVyX3g1MDlfY2VydF91cmwiOiAiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vb2F1dGgyL3YxL2NlcnRzIiwKICAiY2xpZW50X3g1MDlfY2VydF91cmwiOiAiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vcm9ib3QvdjEvbWV0YWRhdGEveDUwOS9naXRodWItYWN0aW9uLTY5ODAyNTQxNSU0MGtlbGx5LXMtMWZlMDUuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLAogICJ1bml2ZXJzZV9kb21haW4iOiAiZ29vZ2xlYXBpcy5jb20iCn0K","validAfterTime":"2023-09-29T15:08:16Z","validBeforeTime":"9999-12-31T23:59:59Z","keyAlgorithm":"KEY_ALG_RSA_2048","keyOrigin":"GOOGLE_PROVIDED","keyType":"USER_MANAGED"}
+[info] 
+[info] +  Created service account github-action-698025415 with Firebase Hosting admin permissions. 
+[debug] [2023-09-29T15:08:14.676Z] >>> [apiv2][query] PUT https://api.github.com/repos/kellyKevin/Kelly/actions/secrets/FIREBASE_SERVICE_ACCOUNT_KELLY_S_1FE05 [none]
+[debug] [2023-09-29T15:08:14.677Z] >>> [apiv2][body] PUT https://api.github.com/repos/kellyKevin/Kelly/actions/secrets/FIREBASE_SERVICE_ACCOUNT_KELLY_S_1FE05 {"encrypted_value":"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","key_id":"568250167242549743"}
+[debug] [2023-09-29T15:08:16.290Z] <<< [apiv2][status] PUT https://api.github.com/repos/kellyKevin/Kelly/actions/secrets/FIREBASE_SERVICE_ACCOUNT_KELLY_S_1FE05 201
+[debug] [2023-09-29T15:08:16.291Z] <<< [apiv2][body] PUT https://api.github.com/repos/kellyKevin/Kelly/actions/secrets/FIREBASE_SERVICE_ACCOUNT_KELLY_S_1FE05 {}
+[info] +  Uploaded service account JSON to GitHub as secret FIREBASE_SERVICE_ACCOUNT_KELLY_S_1FE05. 
+[info] i  You can manage your secrets at https://github.com/kellyKevin/Kelly/settings/secrets. 
+[info] 
+[info] 
+[info] +  Created workflow file C:\Users\KELLY\Desktop\Docs\bscit 2\magaki\.github/workflows/firebase-hosting-pull-request.yml 
+[info] 
+[info] +  Created workflow file C:\Users\KELLY\Desktop\Docs\bscit 2\magaki\.github/workflows/firebase-hosting-merge.yml 
+[info] 
+[info] i  Action required: Visit this URL to revoke authorization for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] i  Action required: Push any new workflow file(s) to your repo 
+[info] 
+=== Storage Setup
+[info] 
+[info] Firebase Storage Security Rules allow you to define how and when to allow
+[info] uploads and downloads. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[info] +  Wrote storage.rules 
+[info] 
+=== Emulators Setup
+[info] i  firestore: downloading cloud-firestore-emulator-v1.18.2.jar... {"metadata":{"emulator":{"name":"firestore"},"message":"downloading cloud-firestore-emulator-v1.18.2.jar..."}}
+[debug] [2023-09-29T15:10:45.471Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/cloud-firestore-emulator-v1.18.2.jar 
+[debug] [2023-09-29T15:10:46.133Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/cloud-firestore-emulator-v1.18.2.jar 200
+[debug] [2023-09-29T15:10:46.134Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/cloud-firestore-emulator-v1.18.2.jar [stream]
+[info] i  database: downloading firebase-database-emulator-v4.11.2.jar... {"metadata":{"emulator":{"name":"database"},"message":"downloading firebase-database-emulator-v4.11.2.jar..."}}
+[debug] [2023-09-29T15:12:04.304Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/firebase-database-emulator-v4.11.2.jar 
+[debug] [2023-09-29T15:12:04.961Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/firebase-database-emulator-v4.11.2.jar 200
+[debug] [2023-09-29T15:12:04.961Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/firebase-database-emulator-v4.11.2.jar [stream]
+[info] i  pubsub: downloading pubsub-emulator-0.7.1.zip... {"metadata":{"emulator":{"name":"pubsub"},"message":"downloading pubsub-emulator-0.7.1.zip..."}}
+[debug] [2023-09-29T15:12:29.987Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/pubsub-emulator-0.7.1.zip 
+[debug] [2023-09-29T15:12:30.510Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/pubsub-emulator-0.7.1.zip 200
+[debug] [2023-09-29T15:12:30.510Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/pubsub-emulator-0.7.1.zip [stream]
+[debug] [2023-09-29T15:12:56.303Z] Data is 65137179
+[debug] [2023-09-29T15:12:56.304Z] [unzip] Entry: pubsub-emulator/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-09-29T15:12:56.305Z] [unzip] Processing entry: pubsub-emulator\
+[debug] [2023-09-29T15:12:56.305Z] [unzip] mkdir: C:\Users\KELLY\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\
+[debug] [2023-09-29T15:12:56.307Z] [unzip] Entry: pubsub-emulator/lib/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-09-29T15:12:56.307Z] [unzip] Processing entry: pubsub-emulator\lib\
+[debug] [2023-09-29T15:12:56.307Z] [unzip] mkdir: C:\Users\KELLY\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\lib\
+[debug] [2023-09-29T15:12:56.308Z] [unzip] Entry: pubsub-emulator/lib/cloud-pubsub-emulator-0.7.1.jar (compressed_size=65133164 bytes, uncompressed_size=70597065 bytes)
+[debug] [2023-09-29T15:12:56.309Z] [unzip] Processing entry: pubsub-emulator\lib\cloud-pubsub-emulator-0.7.1.jar
+[debug] [2023-09-29T15:12:56.309Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\lib
+[debug] [2023-09-29T15:12:56.309Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\lib\cloud-pubsub-emulator-0.7.1.jar
+[debug] [2023-09-29T15:12:57.379Z] [unzip] Entry: pubsub-emulator/bin/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-09-29T15:12:57.379Z] [unzip] Processing entry: pubsub-emulator\bin\
+[debug] [2023-09-29T15:12:57.380Z] [unzip] mkdir: C:\Users\KELLY\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\bin\
+[debug] [2023-09-29T15:12:57.381Z] [unzip] Entry: pubsub-emulator/bin/cloud-pubsub-emulator.bat (compressed_size=885 bytes, uncompressed_size=2271 bytes)
+[debug] [2023-09-29T15:12:57.381Z] [unzip] Processing entry: pubsub-emulator\bin\cloud-pubsub-emulator.bat
+[debug] [2023-09-29T15:12:57.381Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\bin
+[debug] [2023-09-29T15:12:57.381Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\bin\cloud-pubsub-emulator.bat
+[debug] [2023-09-29T15:12:57.388Z] [unzip] Entry: pubsub-emulator/bin/cloud-pubsub-emulator (compressed_size=1954 bytes, uncompressed_size=5142 bytes)
+[debug] [2023-09-29T15:12:57.388Z] [unzip] Processing entry: pubsub-emulator\bin\cloud-pubsub-emulator
+[debug] [2023-09-29T15:12:57.388Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\bin
+[debug] [2023-09-29T15:12:57.389Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\bin\cloud-pubsub-emulator
+[info] i  storage: downloading cloud-storage-rules-runtime-v1.1.3.jar... {"metadata":{"emulator":{"name":"storage"},"message":"downloading cloud-storage-rules-runtime-v1.1.3.jar..."}}
+[debug] [2023-09-29T15:12:57.401Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/cloud-storage-rules-runtime-v1.1.3.jar 
+[debug] [2023-09-29T15:12:57.947Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/cloud-storage-rules-runtime-v1.1.3.jar 200
+[debug] [2023-09-29T15:12:57.947Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/cloud-storage-rules-runtime-v1.1.3.jar [stream]
+[info] i  ui: downloading ui-v1.11.7.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.11.7.zip..."}}
+[debug] [2023-09-29T15:13:17.466Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.7.zip 
+[info] 
+=== Remoteconfig Setup
+[debug] [2023-09-29T15:13:17.969Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.7.zip 200
+[debug] [2023-09-29T15:13:17.969Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.7.zip [stream]
+[debug] [2023-09-29T15:13:19.522Z] Data is 3064105
+[debug] [2023-09-29T15:13:19.523Z] [unzip] Entry: client/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-09-29T15:13:19.523Z] [unzip] Processing entry: client\
+[debug] [2023-09-29T15:13:19.523Z] [unzip] mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\
+[debug] [2023-09-29T15:13:19.559Z] [unzip] Entry: client/favicon.ico (compressed_size=2497 bytes, uncompressed_size=7406 bytes)
+[debug] [2023-09-29T15:13:19.559Z] [unzip] Processing entry: client\favicon.ico
+[debug] [2023-09-29T15:13:19.559Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client
+[debug] [2023-09-29T15:13:19.560Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\favicon.ico
+[debug] [2023-09-29T15:13:19.566Z] [unzip] Entry: client/apple-touch-icon.png (compressed_size=7231 bytes, uncompressed_size=7367 bytes)
+[debug] [2023-09-29T15:13:19.566Z] [unzip] Processing entry: client\apple-touch-icon.png
+[debug] [2023-09-29T15:13:19.566Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client
+[debug] [2023-09-29T15:13:19.567Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\apple-touch-icon.png
+[debug] [2023-09-29T15:13:19.569Z] [unzip] Entry: client/android-chrome-512x512.png (compressed_size=16987 bytes, uncompressed_size=18186 bytes)
+[debug] [2023-09-29T15:13:19.569Z] [unzip] Processing entry: client\android-chrome-512x512.png
+[debug] [2023-09-29T15:13:19.570Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client
+[debug] [2023-09-29T15:13:19.570Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\android-chrome-512x512.png
+[debug] [2023-09-29T15:13:19.573Z] [unzip] Entry: client/assets/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-09-29T15:13:19.573Z] [unzip] Processing entry: client\assets\
+[debug] [2023-09-29T15:13:19.573Z] [unzip] mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\
+[debug] [2023-09-29T15:13:19.574Z] [unzip] Entry: client/assets/extensions/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-09-29T15:13:19.574Z] [unzip] Processing entry: client\assets\extensions\
+[debug] [2023-09-29T15:13:19.574Z] [unzip] mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\extensions\
+[debug] [2023-09-29T15:13:19.575Z] [unzip] Entry: client/assets/extensions/default-extension.png (compressed_size=1646 bytes, uncompressed_size=1657 bytes)
+[debug] [2023-09-29T15:13:19.575Z] [unzip] Processing entry: client\assets\extensions\default-extension.png
+[debug] [2023-09-29T15:13:19.575Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\extensions
+[debug] [2023-09-29T15:13:19.576Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\extensions\default-extension.png
+[debug] [2023-09-29T15:13:19.578Z] [unzip] Entry: client/assets/index.58ca09f7.css (compressed_size=37601 bytes, uncompressed_size=321252 bytes)
+[debug] [2023-09-29T15:13:19.578Z] [unzip] Processing entry: client\assets\index.58ca09f7.css
+[debug] [2023-09-29T15:13:19.578Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets
+[debug] [2023-09-29T15:13:19.578Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\index.58ca09f7.css
+[debug] [2023-09-29T15:13:19.582Z] [unzip] Entry: client/assets/index.c2583d42.js (compressed_size=526232 bytes, uncompressed_size=1860152 bytes)
+[debug] [2023-09-29T15:13:19.583Z] [unzip] Processing entry: client\assets\index.c2583d42.js
+[debug] [2023-09-29T15:13:19.583Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets
+[debug] [2023-09-29T15:13:19.583Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\index.c2583d42.js
+[debug] [2023-09-29T15:13:19.603Z] [unzip] Entry: client/assets/provider-icons/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-09-29T15:13:19.603Z] [unzip] Processing entry: client\assets\provider-icons\
+[debug] [2023-09-29T15:13:19.604Z] [unzip] mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\
+[debug] [2023-09-29T15:13:19.604Z] [unzip] Entry: client/assets/provider-icons/auth_service_oidc.svg (compressed_size=414 bytes, uncompressed_size=858 bytes)
+[debug] [2023-09-29T15:13:19.605Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_oidc.svg
+[debug] [2023-09-29T15:13:19.605Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons
+[debug] [2023-09-29T15:13:19.605Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\auth_service_oidc.svg
+[debug] [2023-09-29T15:13:19.607Z] [unzip] Entry: client/assets/provider-icons/auth_service_yahoo.svg (compressed_size=577 bytes, uncompressed_size=1182 bytes)
+[debug] [2023-09-29T15:13:19.608Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_yahoo.svg
+[debug] [2023-09-29T15:13:19.608Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons
+[debug] [2023-09-29T15:13:19.608Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\auth_service_yahoo.svg
+[debug] [2023-09-29T15:13:19.610Z] [unzip] Entry: client/assets/provider-icons/auth_service_phone.svg (compressed_size=261 bytes, uncompressed_size=414 bytes)
+[debug] [2023-09-29T15:13:19.610Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_phone.svg
+[debug] [2023-09-29T15:13:19.610Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons
+[debug] [2023-09-29T15:13:19.611Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\auth_service_phone.svg
+[debug] [2023-09-29T15:13:19.613Z] [unzip] Entry: client/assets/provider-icons/auth_service_saml.svg (compressed_size=575 bytes, uncompressed_size=1226 bytes)
+[debug] [2023-09-29T15:13:19.613Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_saml.svg
+[debug] [2023-09-29T15:13:19.613Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons
+[debug] [2023-09-29T15:13:19.614Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\auth_service_saml.svg
+[debug] [2023-09-29T15:13:19.616Z] [unzip] Entry: client/assets/provider-icons/auth_service_mslive.svg (compressed_size=203 bytes, uncompressed_size=378 bytes)
+[debug] [2023-09-29T15:13:19.616Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_mslive.svg
+[debug] [2023-09-29T15:13:19.616Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons
+[debug] [2023-09-29T15:13:19.616Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\auth_service_mslive.svg
+[debug] [2023-09-29T15:13:19.618Z] [unzip] Entry: client/assets/provider-icons/auth_service_facebook.svg (compressed_size=289 bytes, uncompressed_size=457 bytes)
+[debug] [2023-09-29T15:13:19.619Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_facebook.svg
+[debug] [2023-09-29T15:13:19.619Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons
+[debug] [2023-09-29T15:13:19.619Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\auth_service_facebook.svg
+[debug] [2023-09-29T15:13:19.622Z] [unzip] Entry: client/assets/provider-icons/auth_service_play_games.svg (compressed_size=565 bytes, uncompressed_size=1173 bytes)
+[debug] [2023-09-29T15:13:19.622Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_play_games.svg
+[debug] [2023-09-29T15:13:19.622Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons
+[debug] [2023-09-29T15:13:19.623Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\auth_service_play_games.svg
+[debug] [2023-09-29T15:13:19.625Z] [unzip] Entry: client/assets/provider-icons/auth_service_github.svg (compressed_size=466 bytes, uncompressed_size=838 bytes)
+[debug] [2023-09-29T15:13:19.625Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_github.svg
+[debug] [2023-09-29T15:13:19.625Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons
+[debug] [2023-09-29T15:13:19.625Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\auth_service_github.svg
+[debug] [2023-09-29T15:13:19.627Z] [unzip] Entry: client/assets/provider-icons/auth_service_apple.svg (compressed_size=230 bytes, uncompressed_size=334 bytes)
+[debug] [2023-09-29T15:13:19.628Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_apple.svg
+[debug] [2023-09-29T15:13:19.628Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons
+[debug] [2023-09-29T15:13:19.628Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\auth_service_apple.svg
+[debug] [2023-09-29T15:13:19.630Z] [unzip] Entry: client/assets/provider-icons/auth_service_google.svg (compressed_size=409 bytes, uncompressed_size=720 bytes)
+[debug] [2023-09-29T15:13:19.630Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_google.svg
+[debug] [2023-09-29T15:13:19.630Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons
+[debug] [2023-09-29T15:13:19.630Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\auth_service_google.svg
+[debug] [2023-09-29T15:13:19.632Z] [unzip] Entry: client/assets/provider-icons/auth_service_email.svg (compressed_size=228 bytes, uncompressed_size=326 bytes)
+[debug] [2023-09-29T15:13:19.633Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_email.svg
+[debug] [2023-09-29T15:13:19.633Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons
+[debug] [2023-09-29T15:13:19.633Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\auth_service_email.svg
+[debug] [2023-09-29T15:13:19.635Z] [unzip] Entry: client/assets/provider-icons/auth_service_twitter.svg (compressed_size=444 bytes, uncompressed_size=751 bytes)
+[debug] [2023-09-29T15:13:19.635Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_twitter.svg
+[debug] [2023-09-29T15:13:19.635Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons
+[debug] [2023-09-29T15:13:19.636Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\auth_service_twitter.svg
+[debug] [2023-09-29T15:13:19.637Z] [unzip] Entry: client/assets/provider-icons/auth_service_game_center.svg (compressed_size=991 bytes, uncompressed_size=3921 bytes)
+[debug] [2023-09-29T15:13:19.638Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_game_center.svg
+[debug] [2023-09-29T15:13:19.638Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons
+[debug] [2023-09-29T15:13:19.638Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\provider-icons\auth_service_game_center.svg
+[debug] [2023-09-29T15:13:19.640Z] [unzip] Entry: client/assets/index.c2583d42.js.map (compressed_size=1778557 bytes, uncompressed_size=7961927 bytes)
+[debug] [2023-09-29T15:13:19.640Z] [unzip] Processing entry: client\assets\index.c2583d42.js.map
+[debug] [2023-09-29T15:13:19.640Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets
+[debug] [2023-09-29T15:13:19.641Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\index.c2583d42.js.map
+[debug] [2023-09-29T15:13:19.710Z] [unzip] Entry: client/assets/img/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-09-29T15:13:19.710Z] [unzip] Processing entry: client\assets\img\
+[debug] [2023-09-29T15:13:19.710Z] [unzip] mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\img\
+[debug] [2023-09-29T15:13:19.711Z] [unzip] Entry: client/assets/img/database.png (compressed_size=29449 bytes, uncompressed_size=29988 bytes)
+[debug] [2023-09-29T15:13:19.711Z] [unzip] Processing entry: client\assets\img\database.png
+[debug] [2023-09-29T15:13:19.711Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\img
+[debug] [2023-09-29T15:13:19.712Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\assets\img\database.png
+[debug] [2023-09-29T15:13:19.714Z] [unzip] Entry: client/safari-pinned-tab.svg (compressed_size=838 bytes, uncompressed_size=1504 bytes)
+[debug] [2023-09-29T15:13:19.714Z] [unzip] Processing entry: client\safari-pinned-tab.svg
+[debug] [2023-09-29T15:13:19.714Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client
+[debug] [2023-09-29T15:13:19.714Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\safari-pinned-tab.svg
+[debug] [2023-09-29T15:13:19.718Z] [unzip] Entry: client/mstile-150x150.png (compressed_size=5406 bytes, uncompressed_size=5723 bytes)
+[debug] [2023-09-29T15:13:19.719Z] [unzip] Processing entry: client\mstile-150x150.png
+[debug] [2023-09-29T15:13:19.719Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client
+[debug] [2023-09-29T15:13:19.719Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\mstile-150x150.png
+[debug] [2023-09-29T15:13:19.721Z] [unzip] Entry: client/browserconfig.xml (compressed_size=491 bytes, uncompressed_size=822 bytes)
+[debug] [2023-09-29T15:13:19.721Z] [unzip] Processing entry: client\browserconfig.xml
+[debug] [2023-09-29T15:13:19.721Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client
+[debug] [2023-09-29T15:13:19.722Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\browserconfig.xml
+[debug] [2023-09-29T15:13:19.724Z] [unzip] Entry: client/robots.txt (compressed_size=26 bytes, uncompressed_size=26 bytes)
+[debug] [2023-09-29T15:13:19.724Z] [unzip] Processing entry: client\robots.txt
+[debug] [2023-09-29T15:13:19.724Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client
+[debug] [2023-09-29T15:13:19.725Z] [unzip] Writing file: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\robots.txt
+[debug] [2023-09-29T15:13:19.726Z] [unzip] Entry: client/index.html (compressed_size=1363 bytes, uncompressed_size=3064 bytes)
+[debug] [2023-09-29T15:13:19.727Z] [unzip] Processing entry: client\index.html
+[debug] [2023-09-29T15:13:19.727Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client
+[debug] [2023-09-29T15:13:19.727Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\index.html
+[debug] [2023-09-29T15:13:19.729Z] [unzip] Entry: client/favicon-16x16.png (compressed_size=757 bytes, uncompressed_size=777 bytes)
+[debug] [2023-09-29T15:13:19.729Z] [unzip] Processing entry: client\favicon-16x16.png
+[debug] [2023-09-29T15:13:19.729Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client
+[debug] [2023-09-29T15:13:19.730Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\favicon-16x16.png
+[debug] [2023-09-29T15:13:19.731Z] [unzip] Entry: client/manifest.json (compressed_size=246 bytes, uncompressed_size=551 bytes)
+[debug] [2023-09-29T15:13:19.732Z] [unzip] Processing entry: client\manifest.json
+[debug] [2023-09-29T15:13:19.732Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client
+[debug] [2023-09-29T15:13:19.732Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\manifest.json
+[debug] [2023-09-29T15:13:19.734Z] [unzip] Entry: client/favicon-32x32.png (compressed_size=1175 bytes, uncompressed_size=1175 bytes)
+[debug] [2023-09-29T15:13:19.734Z] [unzip] Processing entry: client\favicon-32x32.png
+[debug] [2023-09-29T15:13:19.734Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client
+[debug] [2023-09-29T15:13:19.734Z] [unzip] Writing file: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\favicon-32x32.png
+[debug] [2023-09-29T15:13:19.736Z] [unzip] Entry: client/android-chrome-192x192.png (compressed_size=7602 bytes, uncompressed_size=7834 bytes)
+[debug] [2023-09-29T15:13:19.736Z] [unzip] Processing entry: client\android-chrome-192x192.png
+[debug] [2023-09-29T15:13:19.736Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client
+[debug] [2023-09-29T15:13:19.736Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\client\android-chrome-192x192.png
+[debug] [2023-09-29T15:13:19.738Z] [unzip] Entry: server/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-09-29T15:13:19.738Z] [unzip] Processing entry: server\
+[debug] [2023-09-29T15:13:19.738Z] [unzip] mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\server\
+[debug] [2023-09-29T15:13:19.739Z] [unzip] Entry: server/server.js (compressed_size=343746 bytes, uncompressed_size=1346374 bytes)
+[debug] [2023-09-29T15:13:19.739Z] [unzip] Processing entry: server\server.js
+[debug] [2023-09-29T15:13:19.739Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\server
+[debug] [2023-09-29T15:13:19.740Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\server\server.js
+[debug] [2023-09-29T15:13:19.752Z] [unzip] Entry: server/server.js.map (compressed_size=289157 bytes, uncompressed_size=1325651 bytes)
+[debug] [2023-09-29T15:13:19.752Z] [unzip] Processing entry: server\server.js.map
+[debug] [2023-09-29T15:13:19.752Z] [unzip] else mkdir: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\server
+[debug] [2023-09-29T15:13:19.753Z] [unzip] deflating: C:\Users\KELLY\.cache\firebase\emulators\ui-v1.11.7\server\server.js.map
+[info] 
+=== Extensions Setup
+[debug] [2023-09-29T15:39:18.803Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-29T15:39:18.809Z] > authorizing via signed-in user (kellymomanyi80@gmail.com)
+[debug] [2023-09-29T15:39:18.811Z] [iam] checking project kelly-s-1fe05 for permissions ["firebase.projects.get"]
+[debug] [2023-09-29T15:39:18.817Z] > refreshing access token with scopes: []
+[debug] [2023-09-29T15:39:18.833Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-09-29T15:39:18.833Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-29T15:39:18.870Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------109187467473176469084726","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: getaddrinfo ENOTFOUND www.googleapis.com
+[debug] [2023-09-29T15:39:18.871Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-09-29T15:39:18.874Z] > refreshing access token with scopes: []
+[debug] [2023-09-29T15:39:18.875Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-09-29T15:39:18.875Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-29T15:39:18.883Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------673244844559030367858387","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: getaddrinfo ENOTFOUND www.googleapis.com
+[error] 
+[error] Error: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci

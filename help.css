@@ -1,0 +1,94 @@
+/* Reset some default styles for better consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply styles to the body for better background */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('wVMsPCF.jpg'); /* Add the path to your background image */
+    background-size: cover; /* Adjust the background size as needed */
+    background-position: center;
+    text-align: center;
+    padding: 20px;
+    color: #fff; /* Change text color for better readability */
+}
+
+/* Style the header */
+header {
+    background-color: rgba(0, 123, 255, 0.8); /* Use rgba for a transparent background color */
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Style the help container */
+.help-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Use rgba for a semi-transparent background color */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style the help button */
+.help-button {
+    background-color: rgba(0, 123, 255, 0.8); /* Use rgba for a transparent background color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+/* Style the help content (initially hidden) */
+#help-content {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Style the list in the help content */
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+ol li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Show the help content when the button is clicked */
+#help-button.active + #help-content {
+    display: block;
+}
+
+/* Style images within the help content */
+img {
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 24px;
+    height: 24px;
+}
+.help-button:hover{
+    background-color: blue;
+    color: white;
+}
+

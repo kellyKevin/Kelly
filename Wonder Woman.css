@@ -1,0 +1,132 @@
+body {
+    background-image: url('wVMsPCF.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff; /* Text color */
+}
+h1 {
+    text-align: center;
+    background-color: hsla(179, 87%, 30%, 0.324);
+    color: white;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.movie {
+    background-color: rgb(23, 29, 88);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.movie:hover {
+    transform: translateY(-5px);
+}
+
+.movie img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.movie-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.movie-year {
+    font-size: 1rem;
+    color: #777;
+    margin: 5px 0;
+}
+
+.movie-price {
+    font-size: 1.25rem;
+    color: #ff4500;
+    margin: 10px 0;
+}
+
+.star-rating {
+    font-size: 24px;
+    color: gold;
+    margin: 10px 0;
+}
+
+.star-rating span {
+    cursor: pointer;
+}
+
+.review-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    resize: vertical;
+}
+
+.submit-review-button {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-review-button:hover {
+    background-color: #ff5733;
+}
+.add-to-cart-button {
+    background-color: #ff4500;
+    color: rgb(1, 15, 15);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-cart-button:hover {
+    background-color: #ff5733;
+}
+/* CSS for the navigation menu */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust the spacing between menu items */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333; /* Change the color to your desired text color */
+    font-weight: bold;
+}
+
+/* Optionally, you can style the links when hovered */
+nav a:hover {
+    color: #ff4500; /* Change the color for the hover effect */
+}
