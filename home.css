@@ -72,7 +72,7 @@ body {
 .mobile-menu-btn {
     display: none;
     cursor: pointer;
-    color: #fff; /* Mobile menu button color */
+    color: #ffffff; /* Mobile menu button color */
     font-size: 24px;
     margin-right: 20px; /* Add some spacing between button and logo */
 }
@@ -120,13 +120,14 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #fff;
+    color: rgb(204, 19, 19)323;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #ff6f61; /* Highlight color for links */
+    color: #4a8aea; /* Highlight color for links */
+    transition: transform 0.3s;
 }
 
 .text-box {
@@ -147,7 +148,7 @@ p {
 
 .hero-btn {
     display: inline-block;
-    background-color: #ff6f61; /* Highlight color for buttons */
+    background-color: #6198ff; /* Highlight color for buttons */
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -157,7 +158,7 @@ p {
 }
 
 .hero-btn:hover {
-    background-color: #f44236; /* Darker highlight color on hover */
+    background-color: rgb(4, 7, 11); /* Darker highlight color on hover */
 }
 
 /* Section styles */
@@ -202,7 +203,7 @@ footer {
 }
 
 .f-menu a:hover {
-    color: #ff6f61; /* Highlight color for links */
+    color: #61b8ff; /* Highlight color for links */
 }
 
 .f-icons a {
@@ -278,3 +279,46 @@ footer {
     max-width: 100px; /* Adjust the size as needed */
     height: auto; /* Automatically adjust the height to maintain aspect ratio */
 }
+/* ... (previous CSS code) ... */
+
+.hero-btn {
+    display: inline-block;
+    background-color: #09090a; /* Highlight color for buttons */
+    color: rgba(67, 203, 227, 0.722);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.1s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-btn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0c0905; /* Darker color for button overlay */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: transform 0.3s;
+}
+
+.hero-btn:hover::before {
+    transform: scaleX(0); /* Slide out the overlay on hover */
+}
+
+.hero-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-btn:hover {
+    background-color: #100d0d; /* Darker highlight color on hover */
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+/* ... (previous CSS code) ... */
