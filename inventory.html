@@ -148,9 +148,21 @@
             <a href="contact.html" class="hero-btn">Contact</a>
             <a href="index1.html" class="hero-btn">Account/login</a>
             <h1>Movie Showcase</h1>
+            <select name="" id="collectionFilter">
+                <option value="all">Movies and Series</option>
+                <option value="movies">Movies</option>
+                <option value="series">Series</option>
+            </select>
+            <select name="" id="genreFilter">
+                <option value="all">All Genres</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Comedy">Comedy</option>
+            </select>
             <div class="movie-list"></div>
         </ul>
-        <div class="container" id="output"></div>
+        <div class="container" id="output">
+
+        </div>
    
 
 
@@ -171,29 +183,78 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        async function fetchData() {
-            try {
-                const querySnapshot = await getDocs(collection(db, "movies"));
-                const allProducts = document.getElementById('output');
+        const querySnapshots = {
+            "movies": await getDocs(collection(db, "movies")),
+            "series": await getDocs(collection(db, "series"))
+        };
 
+        const urlParams = new URLSearchParams(window.location.search);
+        const allProducts = document.getElementById('output');
+        const collectionFilterSelect = document.getElementById('collectionFilter');
+        const genreFilterSelect = document.getElementById('genreFilter'); // Add this line
+
+        async function fetchAndDisplayProducts(collectionName, genreName) {
+            // Clear previous content
+            allProducts.innerHTML = '';
+
+            if (collectionName === 'all') {
+                for (const querySnapshot of Object.values(querySnapshots)) {
+                    querySnapshot.forEach((doc) => {
+                        // Check both collection and brand filters
+                        if (genreName === 'all' || (doc.data().Genre === genreName)) {
+                            displayProduct(doc);
+                        }
+                    });
+                }
+            } else {
+                const querySnapshot = querySnapshots[collectionName];
                 querySnapshot.forEach((doc) => {
-                    const data = doc.data();
-                    allProducts.innerHTML += `
-    <a href="Glass Onion.html?id=${data.id}.html" class="movie">
-        <img src="${data.image}" alt="${data.movie}">
-        <div class="movie-info">
-            <h2 class="movie-title">${data.movie}</h2>
-            <p class="movie-year">${data.length}</p>
-            <p class="movie-year">${data.year}</p>
-            <d/iv>
-    </a>`;
+                    // Check brand filter
+                    if (genreName === 'all' || (doc.data().Genre === genreName)) {
+                        displayProduct(doc);
+                    }
                 });
-            } catch (error) {
-                console.error("Error getting documents: ", error);
             }
         }
 
-        fetchData();
+        function displayProduct(doc) {
+            const data = doc.data();
+            const sanitizedProductId = encodeURIComponent(doc.id);
+            allProducts.innerHTML += `<a href="Glass Onion.html?id=${data.id}.html" class="movie">
+        <img src="${data.Image}" alt="${doc.id}">
+        <div class="movie-info">
+            <h2 class="movie-title">${doc.id}</h2>
+            <p class="movie-year">${data.Length}</p>
+            <p class="movie-year">${data.Year}</p>
+            <p class="movie-year">${data.Genre}</p>
+            </div>
+    </a>
+`;
+        }
+
+        // Event listener for changes in the select tags
+        collectionFilterSelect.addEventListener('change', updateProducts);
+        genreFilterSelect.addEventListener('change', updateProducts); // Add this line
+
+        // Initial fetch and display with default values
+        updateProducts();
+
+        // Function to update products based on user selections
+        function updateProducts() {
+            const selectedCollection = collectionFilterSelect.value || urlParams.get('collection') || 'all';
+            const selectedGenre = genreFilterSelect.value || urlParams.get('genre') || 'all';
+
+            const url = new URL(window.location.href);
+            url.searchParams.set('collection', selectedCollection);
+            url.searchParams.set('genre', selectedGenre);
+
+            // Replace the current URL without reloading the page
+            window.history.replaceState({}, '', url);
+
+            // Fetch and display products based on the updated parameters
+            fetchAndDisplayProducts(selectedCollection, selectedGenre);
+        }
+;
     </script>
 </body>
 

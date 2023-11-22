@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        #cart {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .product img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .product p {
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .product button {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        p#total {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #paymentOptions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #paymentOptions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #paymentOptions .mpesa {
+            background-color: #35a000;
+        }
+
+        #paymentOptions .card {
+            background-color: #007bff;
+        }
+
+        #paymentOptions .paypal {
+            background-color: #003087;
+        }
+
+        .hero-btn::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #0c0905;
+            /* Darker color for button overlay */
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: transform 0.3s;
+        }
+
+        .hero-btn:hover::before {
+            transform: scaleX(0);
+            /* Slide out the overlay on hover */
+        }
+
+        .hero-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-btn:hover {
+            background-color: #100d0d;
+            /* Darker highlight color on hover */
+            transform: scale(1.1);
+            transition: transform 0.2s;
+        }
+
+        nav a:hover {
+            color: #ff4500;
+            /* Change the color for the hover effect */
+        }
+
+        .logo {
+            max-width: 100px;
+            /* Adjust the size as needed */
+            height: auto;
+            /* Automatically adjust the height to maintain aspect ratio */
+        }
+
+        /* ... (previous CSS code) ... */
+
+        .hero-btn {
+            display: inline-block;
+            background-color: #09090a;
+            /* Highlight color for buttons */
+            color: rgba(67, 203, 227, 0.722);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.1s, transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Wonder Woman Showcase</h1>
+        <nav>
+            <div class="nav-logo">
+                <img src="lionn.jpg" alt="Archer Car Dealership" class="logo">
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <a href="index.html" class="hero-btn">Home</a>
+                    <a href="about.html" class="hero-btn">About</a>
+                    <a href="inventory.html" class="hero-btn">Inventory</a>
+                    <a href="index1.html" class="hero-btn">Account/login</a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="cart"></div>
+    <p>Total: <span id="total">0</span></p>
+    <div id="paymentOptions">
+        <button class="mpesa">Pay with M-Pesa</button>
+        <button class="card">Pay with Card</button>
+        <button class="paypal">Pay with PayPal</button>
+    </div>
+    <div id="orderHistory">
+        <h2>Order History (after payment)</h2>
+        <ul id="orderList"></ul>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyD6vtDos7dBccm4jRZR7nFv4RMgucnxWfg",
+            authDomain: "kelly2-d0e0c.firebaseapp.com",
+            databaseURL: "https://kelly2-d0e0c-default-rtdb.firebaseio.com",
+            projectId: "kelly2-d0e0c",
+            storageBucket: "kelly2-d0e0c.appspot.com",
+            messagingSenderId: "586673821546",
+            appId: "1:586673821546:web:ed19cfdfff2c879117f713",
+            measurementId: "G-DHL16T4TG0"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        // Get a reference to the database service
+        var database = firebase.database();
+
+        function displayCart() {
+            database.ref('products').on('value', function (snapshot) {
+                let cartDiv = document.getElementById('cart');
+                let total = 0;
+                cartDiv.innerHTML = ''; // Clear the cart before re-populating
+
+                snapshot.forEach(function (childSnapshot) {
+                    let product = childSnapshot.val();
+                    let productDiv = document.createElement('div');
+                    productDiv.className = 'product';
+                    productDiv.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <p>${product.name} - ksh${product.price}</p>
+                        <button onclick="removeFromCart('${childSnapshot.key}')">Remove</button>
+                    `;
+                    cartDiv.appendChild(productDiv);
+                    total += product.price;
+                });
+                document.getElementById('total').innerText = total.toLocaleString('en-US', { style: 'currency', currency: 'KES' });
+            });
+        }
+
+        function removeFromCart(key) {
+            database.ref('products/' + key).remove();
+        }
+
+        // Call displayCart to initialize the display
+        displayCart();
+        document.querySelector('.mpesa').addEventListener('click', function () {
+            // Code to process payment via M-Pesa
+            alert('M-Pesa payment processing not implemented');
+        });
+
+        document.querySelector('.card').addEventListener('click', function () {
+            // Code to process payment via Card
+            alert('Card payment processing not implemented');
+        });
+
+        document.querySelector('.paypal').addEventListener('click', function () {
+            // Code to process payment via PayPal
+            alert('PayPal payment processing not implemented');
+        });
+
+
+
+        function displayOrderHistory() {
+            // Display the order history
+            let orderList = document.getElementById('orderList');
+            orderList.innerHTML = ''; // Clear the order history before re-populating
+
+            database.ref('orderHistory').on('value', function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    let order = childSnapshot.val();
+                    let listItem = document.createElement('li');
+                    listItem.textContent = `Order Total: ${order.total}`;
+                    orderList.appendChild(listItem);
+                });
+            });
+        }
+
+        function clearCart() {
+            // Clear the cart in Firebase
+            database.ref('products').remove();
+        }
+
+        displayCart();
+        displayOrderHistory();
+
+        document.querySelector('.mpesa').addEventListener('click', function () {
+            // Your existing M-Pesa payment processing code
+
+            // After successful payment, save the order to the order history
+            saveOrderHistory({ total: document.getElementById('total').innerText });
+            // Clear the cart
+            clearCart();
+        });
+
+        document.querySelector('.card').addEventListener('click', function () {
+            // Your existing Card payment processing code
+
+            // After successful payment, save the order to the order history
+            saveOrderHistory({ total: document.getElementById('total').innerText });
+            // Clear the cart
+            clearCart();
+        });
+
+        document.querySelector('.paypal').addEventListener('click', function () {
+            // Your existing PayPal payment processing code
+
+            // After successful payment, save the order to the order history
+            saveOrderHistory({ total: document.getElementById('total').innerText });
+            // Clear the cart
+            clearCart();
+        });
+    </script>
+</body>
+
+</html>

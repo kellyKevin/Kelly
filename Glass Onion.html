@@ -1,14 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glass onion Showcase</title>
-    <link rel="stylesheet" href="Glass onion.css">
+    <title>Movie Showcase</title>
+    <style>
+        header {
+            background-color: #333;
+            color: #000000;
+            padding: 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #444;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #8e4f4f;
+        }
+
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .product button {
+            margin-left: auto;
+        }
+
+        #reviewsList {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 10px;
+        }
+
+        #reviewsList li {
+            margin-bottom: 5px;
+        }
+
+        #reviewsList li::before {
+            content: '⭐';
+            margin-right: 3px;
+        }
+
+        .product {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .product img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .product button {
+            margin-left: 10px;
+        }
+
+        #reviewsList {
+            display: none;
+        }
+
+        body {
+            background-image: url('wVMsPCF.jpg');
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(15, 222, 229, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #100e0e;
+        }
+
+        .movie-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .movie {
+            width: 50%;
+            /* Adjusted width for a two-column layout with some spacing */
+            margin-bottom: 20px;
+            background-color: #16b7c5;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .movie:nth-child(even) {
+            margin-right: 0;
+        }
+
+        .movie:hover {
+            transform: scale(1.05);
+        }
+
+        .movie img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 1px solid #fff;
+        }
+
+        .movie-info {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .movie-title {
+            font-size: 1.2rem;
+            margin: 0;
+            color: #fff;
+        }
+
+        .movie-year {
+            color: #090909;
+        }
+
+        @media screen and (max-width: 768px) {
+            .movie {
+                width: 100%;
+                /* Full width for single column on smaller screens */
+                margin-right: 0;
+            }
+        }
+
+        .hero-btn::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #0c0905;
+            /* Darker color for button overlay */
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: transform 0.3s;
+        }
+
+        .hero-btn:hover::before {
+            transform: scaleX(0);
+            /* Slide out the overlay on hover */
+        }
+
+        .hero-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-btn:hover {
+            background-color: #100d0d;
+            /* Darker highlight color on hover */
+            transform: scale(1.1);
+            transition: transform 0.2s;
+        }
+
+        nav a:hover {
+            color: #ff4500;
+            /* Change the color for the hover effect */
+        }
+
+        .logo {
+            max-width: 100px;
+            /* Adjust the size as needed */
+            height: auto;
+            /* Automatically adjust the height to maintain aspect ratio */
+        }
+
+        /* ... (previous CSS code) ... */
+
+        .hero-btn {
+            display: inline-block;
+            background-color: #09090a;
+            /* Highlight color for buttons */
+            color: rgba(67, 203, 227, 0.722);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.1s, transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <h1>Glass onion Showcase</h1>
+        <h1>Showcase</h1>
         <nav>
             <div class="nav-logo">
                 <img src="lionn.jpg" alt="Archer Car Dealership" class="logo">
@@ -21,144 +247,170 @@
             </ul>
         </nav>
     </header>
-    <h1>Spider Man Showcase</h1>
-    <div class="container">
-        <div class="movie">
-            <img src="images/hou_art_20221123_glassonion_header.jpeg" alt="Glass onion movie">
-            <h2 class="movie-title">Glass onion movie</h2>
-            <p class="movie-year">Year: 2001</p>
-            <p class="movie-price">$10.00</p>
-            <button onclick="addToCart(1)">Add to Cart</button>
-                <br>
-            <div class="star-rating">
-                <span onclick="rateProduct(1, 1)">★</span>
-                <span onclick="rateProduct(1, 2)">★</span>
-                <span onclick="rateProduct(1, 3)">★</span>
-                <span onclick="rateProduct(1, 4)">★</span>
-                <span onclick="rateProduct(1, 5)">★</span>
-            </div>
-            <textarea id="review_1" class="review-textarea" rows="3" cols="30" placeholder="Leave a review"></textarea>
-            <button onclick="submitReview(1)" class="submit-review-button">Submit Review</button>
-        </div>
-        <div class="movie">
-            <img src="images/Glass Onion A Knives Out Mystery (2022).webp" alt="Glass onion movie">
-            <h2 class="movie-title">Glass onion movie</h2>
-            <p class="movie-year">Year: 2004</p>
-            <p class="movie-price">$15.00</p>
-            <button onclick="addToCart(2)">Add to Cart</button>
-                <br>
-            <div class="star-rating">
-                <span onclick="rateProduct(2, 1)">★</span>
-                <span onclick="rateProduct(2, 2)">★</span>
-                <span onclick="rateProduct(2, 3)">★</span>
-                <span onclick="rateProduct(2, 4)">★</span>
-                <span onclick="rateProduct(2, 5)">★</span>
-            </div>
-            <textarea id="review_2" class="review-textarea" rows="3" cols="30" placeholder="Leave a review"></textarea>
-            <button onclick="submitReview(2)" class="submit-review-button">Submit Review</button>
-        </div>
-        <div class="movie">
-            <img src="images/O.jpg" alt="Glass onion movie">
-            <h2 class="movie-title">Glass onion movie</h2>
-            <p class="movie-year">Year: 2007</p>
-            <p class="movie-price">$20.00</p>
-            <button onclick="addToCart(3)">Add to Cart</button>
-                <br>
-            <div class="star-rating">
-                <span onclick="rateProduct(3, 1)">★</span>
-                <span onclick="rateProduct(3, 2)">★</span>
-                <span onclick="rateProduct(3, 3)">★</span>
-                <span onclick="rateProduct(3, 4)">★</span>
-                <span onclick="rateProduct(3, 5)">★</span>
-            </div>
-            <textarea id="review_3" class="review-textarea" rows="3" cols="30" placeholder="Leave a review"></textarea>
-            <button onclick="submitReview(3)" class="submit-review-button">Submit Review</button>
-        </div>
-        <div class="movie">
-            <img src="images/Knives_Out_poster.jpeg" alt="Glass onion movie">
-            <h2 class="movie-title">Glass onion movie</h2>
-            <p class="movie-year">Year:  2019</p>
-            <p class="movie-price">$20.00</p>
-            <button onclick="addToCart(3)">Add to Cart</button>
-                <br>
-            <div class="star-rating">
-                <span onclick="rateProduct(3, 1)">★</span>
-                <span onclick="rateProduct(3, 2)">★</span>
-                <span onclick="rateProduct(3, 3)">★</span>
-                <span onclick="rateProduct(3, 4)">★</span>
-                <span onclick="rateProduct(3, 5)">★</span>
-            </div>
-            <textarea id="review_4" class="review-textarea" rows="3" cols="30" placeholder="Leave a review"></textarea>
-            <button onclick="submitReview(4)" class="submit-review-button">Submit Review</button>
-        </div>
+    <div class="product" id="product1">
+        <img src="images/hou_art_20221123_glassonion_header.jpeg" alt="Product 1">
+        <h2 class="movie-title">Glass onion part 1</h2>
+        <p class="movie-year">Year: 2001</p>
+        <p>Price - ksh 200</p>
+        <form id="reviewForm">
+            <label for="rating">Rating:</label><br>
+            <select id="rating" name="rating">
+                <option value="1">⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="5">⭐⭐⭐⭐⭐</option>
+            </select><br>
+            <label for="review">Review:</label><br>
+            <textarea id="review" name="review"></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+        <button id="toggleReviews">Toggle Reviews</button>
+        <ul id="reviewsList"></ul>
+        <button onclick="addToCart('Product 1', 200, 'hou_art_20221123_glassonion_header.jpeg')">Add to Cart</button>
     </div>
-    <h2>Shopping Cart</h2>
-    <div id="cart"></div>
-    <h3>Total: $<span id="total">0.00</span></h3>
+    <div class="product2" id="product2">
+        <img src="Glass Onion A Knives Out Mystery (2022).webp" alt="Product 2">
+        <h2 class="movie-title">Glass the movie</h2>
+        <p class="movie-year">Year: 2004</p>
+        <p>Price - kshh 280</p>
+        <form id="reviewForm">
+            <label for="rating">Rating:</label><br>
+            <select id="rating" name="rating">
+                <option value="1">⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="5">⭐⭐⭐⭐⭐</option>
+            </select><br>
+            <label for="review">Review:</label><br>
+            <textarea id="review" name="review"></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+        <button id="toggleReviews">Toggle Reviews</button>
+        <ul id="reviewsList"></ul>
+        <button onclick="addToCart('Product 2', 280, 'Glass Onion A Knives Out Mystery (2022).webp')">Add to
+            Cart</button>
+    </div>
+    <div class="product3" id="product3">
+        <img src="images/O.jpg" alt="Product 3">
+        <h2 class="movie-title">Glass apocalypse</h2>
+        <p class="movie-year">Year: 2007</p>
+        <p>Price - ksh 270</p>
+        <form id="reviewForm">
+            <label for="rating">Rating:</label><br>
+            <select id="rating" name="rating">
+                <option value="1">⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="5">⭐⭐⭐⭐⭐</option>
+            </select><br>
+            <label for="review">Review:</label><br>
+            <textarea id="review" name="review"></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+        <button id="toggleReviews">Toggle Reviews</button>
+        <ul id="reviewsList"></ul>
+        <button onclick="addToCart('Product 3', 270, 'O.jpg')">Add to Cart</button>
+    </div>
+    <div class="product4" id="product4">
+        <img src="images/Knives_Out_poster.jpeg" alt="Product 4">
+        <h2 class="movie-title">Glass part three</h2>
+        <p class="movie-year">Year: 2019</p>
+        <p>Price - ksh 340</p>
+        <form id="reviewForm">
+            <label for="rating">Rating:</label><br>
+            <select id="rating" name="rating">
+                <option value="1">⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="5">⭐⭐⭐⭐⭐</option>
+            </select><br>
+            <label for="review">Review:</label><br>
+            <textarea id="review" name="review"></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+        <button id="toggleReviews">Toggle Reviews</button>
+        <ul id="reviewsList"></ul>
+        <button onclick="addToCart('Product 4', 340, 'Knives_Out_poster.jpeg')">Add to Cart</button>
+    </div>
+    
+    <a href="cart.html" class="hero-btn">View cart</a>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
 
     <script>
-        const products = [
-            { id: 1, name: "Glass onion movie", price: 10.00, rating: 0, reviews: [] },
-            { id: 2, name: "Glass onion movie", price: 15.00, rating: 0, reviews: [] },
-            { id: 3, name: "Glass onion movie", price: 20.00, rating: 0, reviews: [] },
-            { id: 4, name: "Glass onion movie", price: 20.00, rating: 0, reviews: [] },
-        ];
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyD6vtDos7dBccm4jRZR7nFv4RMgucnxWfg",
+            authDomain: "kelly2-d0e0c.firebaseapp.com",
+            databaseURL: "https://kelly2-d0e0c-default-rtdb.firebaseio.com",
+            projectId: "kelly2-d0e0c",
+            storageBucket: "kelly2-d0e0c.appspot.com",
+            messagingSenderId: "586673821546",
+            appId: "1:586673821546:web:ed19cfdfff2c879117f713",
+            measurementId: "G-DHL16T4TG0"
+        };
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = app.database();
 
-        const cart = [];
-        const cartContainer = document.getElementById("cart");
-        const totalContainer = document.getElementById("total");
-
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            if (product) {
-                cart.push(product);
-                updateCart();
-            }
+        function addToCart(name, price, image) {
+            var newProductKey = database.ref().child('products').push().key;
+            database.ref('products/' + newProductKey).set({
+                name: name,
+                price: price,
+                image: image
+            });
         }
 
-        function updateCart() {
-            cartContainer.innerHTML = "";
-            let totalPrice = 0;
+        firebase.initializeApp(firebaseConfig);
 
-            cart.forEach(item => {
-                const cartItemDiv = document.createElement("div");
-                cartItemDiv.textContent = `${item.name} - $${item.price}`;
-                cartContainer.appendChild(cartItemDiv);
-                totalPrice += item.price;
+        document.getElementById('reviewForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var review = document.getElementById('review').value;
+            var rating = document.getElementById('rating').value;
+
+            firebase.database().ref('reviews').push({
+                review: review,
+                rating: rating
             });
 
-            totalContainer.textContent = totalPrice.toFixed(2);
-        }
+            // Clear the form inputs after submission
+            document.getElementById('review').value = '';
+            document.getElementById('rating').value = '1'; // Reset rating to default
+        });
 
-        function rateProduct(productId, rating) {
-            const product = products.find(p => p.id === productId);
-            if (product) {
-                product.rating = rating;
-                updateStarRating(productId, rating);
+        document.getElementById('toggleReviews').addEventListener('click', function () {
+            var reviewsList = document.getElementById('reviewsList');
+
+            if (reviewsList.style.display === 'none' || reviewsList.style.display === '') {
+                reviewsList.style.display = 'block';
+            } else {
+                reviewsList.style.display = 'none';
             }
-        }
+        });
 
-        function updateStarRating(productId, rating) {
-            const starRatingContainer = document.querySelector(`.movie:nth-child(${productId}) .star-rating`);
-            const stars = starRatingContainer.querySelectorAll("span");
-            
-            stars.forEach((star, index) => {
-                if (index < rating) {
-                    star.style.color = "gold";
-                } else {
-                    star.style.color = "gray";
+        firebase.database().ref('reviews').on('value', function (snapshot) {
+            var reviews = snapshot.val();
+            var reviewsList = document.getElementById('reviewsList');
+
+            reviewsList.innerHTML = ''; // Clear the list
+
+            for (var key in reviews) {
+                var reviewItem = document.createElement('li');
+                var stars = '';
+                for (var i = 0; i < reviews[key].rating; i++) {
+                    stars += '⭐';
                 }
-            });
-        }
-
-        function submitReview(productId) {
-            const product = products.find(p => p.id === productId);
-            if (product) {
-                const reviewText = document.getElementById(`review_${productId}`).value;
-                product.reviews.push(reviewText);
-                console.log(`Review submitted for ${product.name}: ${reviewText}`);
+                reviewItem.textContent = 'Review: ' + reviews[key].review + ' (Rating: ' + stars + ')';
+                reviewsList.appendChild(reviewItem);
             }
-        }
+        });
     </script>
+
 </body>
+
 </html>
