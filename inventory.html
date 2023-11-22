@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie showcase</title>
+    <link rel="icon" href="lionn.jpg" type="image/png">
     <style>
         body {
             background-image: url('wVMsPCF.jpg');
@@ -137,6 +138,7 @@
 
         /* ... (previous CSS code) ... */
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
@@ -163,64 +165,69 @@
         <div class="container" id="output">
 
         </div>
-   
+        <div class="f-icons">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook fa-3x"></i></a>
+            <a href="https://www.twitter.com"><i class="fab fa-twitter fa-3x"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram fa-3x"></i></a>
+        </div>
 
 
-    <script type="module" async>
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyD6vtDos7dBccm4jRZR7nFv4RMgucnxWfg",
-            authDomain: "kelly2-d0e0c.firebaseapp.com",
-            projectId: "kelly2-d0e0c",
-            storageBucket: "kelly2-d0e0c.appspot.com",
-            messagingSenderId: "586673821546",
-            appId: "1:586673821546:web:ed19cfdfff2c879117f713",
-            measurementId: "G-DHL16T4TG0"
-        };
+        <script type="module" async>
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+            import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+            const firebaseConfig = {
+                apiKey: "AIzaSyD6vtDos7dBccm4jRZR7nFv4RMgucnxWfg",
+                authDomain: "kelly2-d0e0c.firebaseapp.com",
+                projectId: "kelly2-d0e0c",
+                storageBucket: "kelly2-d0e0c.appspot.com",
+                messagingSenderId: "586673821546",
+                appId: "1:586673821546:web:ed19cfdfff2c879117f713",
+                measurementId: "G-DHL16T4TG0"
+            };
 
-        const querySnapshots = {
-            "movies": await getDocs(collection(db, "movies")),
-            "series": await getDocs(collection(db, "series"))
-        };
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const allProducts = document.getElementById('output');
-        const collectionFilterSelect = document.getElementById('collectionFilter');
-        const genreFilterSelect = document.getElementById('genreFilter'); // Add this line
+            const querySnapshots = {
+                "movies": await getDocs(collection(db, "movies")),
+                "series": await getDocs(collection(db, "series"))
+            };
 
-        async function fetchAndDisplayProducts(collectionName, genreName) {
-            // Clear previous content
-            allProducts.innerHTML = '';
+            const urlParams = new URLSearchParams(window.location.search);
+            const allProducts = document.getElementById('output');
+            const collectionFilterSelect = document.getElementById('collectionFilter');
+            const genreFilterSelect = document.getElementById('genreFilter'); // Add this line
 
-            if (collectionName === 'all') {
-                for (const querySnapshot of Object.values(querySnapshots)) {
+            async function fetchAndDisplayProducts(collectionName, genreName) {
+                // Clear previous content
+                allProducts.innerHTML = '';
+
+                if (collectionName === 'all') {
+                    for (const querySnapshot of Object.values(querySnapshots)) {
+                        querySnapshot.forEach((doc) => {
+                            // Check both collection and brand filters
+                            if (genreName === 'all' || (doc.data().Genre === genreName)) {
+                                displayProduct(doc);
+                            }
+                        });
+                    }
+                } else {
+                    const querySnapshot = querySnapshots[collectionName];
                     querySnapshot.forEach((doc) => {
-                        // Check both collection and brand filters
+                        // Check brand filter
                         if (genreName === 'all' || (doc.data().Genre === genreName)) {
                             displayProduct(doc);
                         }
                     });
                 }
-            } else {
-                const querySnapshot = querySnapshots[collectionName];
-                querySnapshot.forEach((doc) => {
-                    // Check brand filter
-                    if (genreName === 'all' || (doc.data().Genre === genreName)) {
-                        displayProduct(doc);
-                    }
-                });
             }
-        }
 
-        function displayProduct(doc) {
-            const data = doc.data();
-            const sanitizedProductId = encodeURIComponent(doc.id);
-            allProducts.innerHTML += `<a href="Glass Onion.html?id=${data.id}.html" class="movie">
+            function displayProduct(doc) {
+                const data = doc.data();
+                const sanitizedProductId = encodeURIComponent(doc.id);
+                allProducts.innerHTML += `<a href="Glass Onion.html?id=${data.id}.html" class="movie">
         <img src="${data.Image}" alt="${doc.id}">
         <div class="movie-info">
             <h2 class="movie-title">${doc.id}</h2>
@@ -230,32 +237,32 @@
             </div>
     </a>
 `;
-        }
+            }
 
-        // Event listener for changes in the select tags
-        collectionFilterSelect.addEventListener('change', updateProducts);
-        genreFilterSelect.addEventListener('change', updateProducts); // Add this line
+            // Event listener for changes in the select tags
+            collectionFilterSelect.addEventListener('change', updateProducts);
+            genreFilterSelect.addEventListener('change', updateProducts); // Add this line
 
-        // Initial fetch and display with default values
-        updateProducts();
+            // Initial fetch and display with default values
+            updateProducts();
 
-        // Function to update products based on user selections
-        function updateProducts() {
-            const selectedCollection = collectionFilterSelect.value || urlParams.get('collection') || 'all';
-            const selectedGenre = genreFilterSelect.value || urlParams.get('genre') || 'all';
+            // Function to update products based on user selections
+            function updateProducts() {
+                const selectedCollection = collectionFilterSelect.value || urlParams.get('collection') || 'all';
+                const selectedGenre = genreFilterSelect.value || urlParams.get('genre') || 'all';
 
-            const url = new URL(window.location.href);
-            url.searchParams.set('collection', selectedCollection);
-            url.searchParams.set('genre', selectedGenre);
+                const url = new URL(window.location.href);
+                url.searchParams.set('collection', selectedCollection);
+                url.searchParams.set('genre', selectedGenre);
 
-            // Replace the current URL without reloading the page
-            window.history.replaceState({}, '', url);
+                // Replace the current URL without reloading the page
+                window.history.replaceState({}, '', url);
 
-            // Fetch and display products based on the updated parameters
-            fetchAndDisplayProducts(selectedCollection, selectedGenre);
-        }
-;
-    </script>
+                // Fetch and display products based on the updated parameters
+                fetchAndDisplayProducts(selectedCollection, selectedGenre);
+            }
+            ;
+        </script>
 </body>
 
 </html>
