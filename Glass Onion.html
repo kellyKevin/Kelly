@@ -242,11 +242,11 @@
             </div>
             <ul>
                 <a href="index.html" class="hero-btn">Home</a>
-                <a href="about.html" class="hero-btn">About</a>
-                <a href="inventory.html" class="hero-btn">Inventory</a>
-                <a href="contact.html" class="hero-btn">Contact</a>
-                <a href="index1.html" class="hero-btn">Account/login</a>
-                <a href="help.html" class="hero-btn">help</a>
+                    <a href="about.html" class="hero-btn">About</a>
+                    <a href="inventory.html" class="hero-btn">Inventory</a>
+                    <a href="contact.html" class="hero-btn">Contact</a>
+                    <a href="index1.html" class="hero-btn">Account/login</a>
+                    <a href="help.html" class="hero-btn">help</a>
             </ul>
         </nav>
     </header>
@@ -339,15 +339,8 @@
         <ul id="reviewsList"></ul>
         <button onclick="addToCart('Product 4', 340, 'Knives_Out_poster.jpeg')">Add to Cart</button>
     </div>
-
-
-    <li>
-        <a id="cartButton" href="#">
-            <img src="images/image33.jpeg" alt="cartButton" width="30px" height="30px">
-            View Cart
-        </a>
-    </li>
-
+    
+    <a href="cart.html" class="hero-btn">View cart</a>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
 
@@ -363,33 +356,19 @@
             appId: "1:586673821546:web:ed19cfdfff2c879117f713",
             measurementId: "G-DHL16T4TG0"
         };
-
         const app = firebase.initializeApp(firebaseConfig);
         const database = app.database();
-        const auth = app.auth();  // Initialize Firebase Authentication
 
         function addToCart(name, price, image) {
-            // Check if the user is signed in
-            const user = auth.currentUser;
-
-            if (user) {
-                // User is signed in, get the user's UID
-                const userId = user.uid;
-
-                // Add product to the user's cart in the database
-                var newProductKey = database.ref('carts/' + userId).push().key;
-                database.ref('carts/' + userId + '/' + newProductKey).set({
-                    name: name,
-                    price: price,
-                    image: image
-                });
-
-                alert('Product added to cart successfully!');
-            } else {
-                // User is not signed in, redirect to sign-in page
-                window.location.href = "index1.html";
-            }
+            var newProductKey = database.ref().child('products').push().key;
+            database.ref('products/' + newProductKey).set({
+                name: name,
+                price: price,
+                image: image
+            });
         }
+
+        firebase.initializeApp(firebaseConfig);
 
         document.getElementById('reviewForm').addEventListener('submit', function (event) {
             event.preventDefault();
@@ -434,8 +413,6 @@
             }
         });
     </script>
-
-
 
 </body>
 
